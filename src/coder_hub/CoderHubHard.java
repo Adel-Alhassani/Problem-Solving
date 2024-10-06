@@ -365,4 +365,110 @@ public class CoderHubHard {
     //===================================================================
     //===================================================================
 
+    public static boolean isInterleave(String A, String B, String C) {
+        String constA = A;
+        String constB = B;
+        String A2 = "";
+        String B2 = "";
+        int lengthOfCSubInA;
+        int lengthOfCSubInB;
+        if ((A.length() + B.length()) != C.length()) {
+            return  false;
+        }
+        for (int i = 0; i < C.length(); i++) {
+            if(!A.contains(String.valueOf(C.charAt(i))) && !B.contains(String.valueOf(C.charAt(i)))){
+                return false;
+            }
+            else{
+                if(A.contains(String.valueOf(C.charAt(i))) && !B.contains(String.valueOf(C.charAt(i)))){
+                    if(A.length() == 1){
+                        A2 += String.valueOf(C.charAt(i));
+                        A = A.replace(String.valueOf(C.charAt(i)),"");
+                    } else {
+                        lengthOfCSubInA = 0;
+                        for (int j = i+1; j <= C.length(); j++) {
+                            if(A.contains(C.substring(i,j))){
+                                lengthOfCSubInA++;
+                                if(A.length() == lengthOfCSubInA){
+                                    A2 += C.substring(i,i + lengthOfCSubInA);
+                                    A = A.replace(C.substring(i,i + lengthOfCSubInA) , "");
+                                    i += lengthOfCSubInA-1;
+                                    break;
+                                }
+                            } else {
+                                A2 += C.substring(i,i + lengthOfCSubInA);
+                                A = A.replace(C.substring(i,i + lengthOfCSubInA) , "");
+                                i += lengthOfCSubInA-1;
+                                break;
+                            }
+                        }
+                    }
+
+                } else if(!A.contains(String.valueOf(C.charAt(i))) && B.contains(String.valueOf(C.charAt(i)))){
+                    if(B.length() == 1){
+                        B2 += String.valueOf(C.charAt(i));
+                        B = B.replaceFirst(String.valueOf(C.charAt(i)),"");
+                    } else{
+                        lengthOfCSubInB = 0;
+                        for (int j = i+1; j <= C.length(); j++) {
+                            if(B.contains(C.substring(i,j))){
+                                lengthOfCSubInB++;
+                                if(B.length() == lengthOfCSubInB){
+                                    B2 += C.substring(i,i + lengthOfCSubInB);
+                                    B = B.replaceFirst(C.substring(i,i + lengthOfCSubInB) , "");
+                                    i += lengthOfCSubInB-1;
+                                    break;
+                                }
+                            } else {
+                                B2 += C.substring(i,i + lengthOfCSubInB);
+                                B = B.replaceFirst(C.substring(i,i + lengthOfCSubInB) , "");
+                                i += lengthOfCSubInB-1;
+                                break;
+                            }
+                        }
+                    }
+
+                } else {
+                     lengthOfCSubInA = 0;
+                     lengthOfCSubInB = 0;
+                    for (int j = i+1; j <= C.length(); j++) {
+                        if(!A.contains(C.substring(i,j)) && !B.contains(C.substring(i,j))){
+                            break;
+                        } else {
+                            if(A.contains(C.substring(i,j))){
+                                lengthOfCSubInA++;
+                            }
+                            if(B.contains(C.substring(i,j))){
+                                lengthOfCSubInB++;
+                            }
+                        }
+
+                    }
+
+                        if(lengthOfCSubInA > lengthOfCSubInB){
+//
+                            A2 += C.substring(i,i + lengthOfCSubInA);
+                            A = A.replaceFirst(C.substring(i,i + lengthOfCSubInA) , "");
+                            i += lengthOfCSubInA-1;
+                        } else {
+//
+                            B2 += C.substring(i,i + lengthOfCSubInB);
+                            B = B.replaceFirst(C.substring(i,i + lengthOfCSubInB) , "");
+                            i += lengthOfCSubInB-1;
+                        }
+
+                    }
+                }
+
+            }
+
+        if(!constA.equals(A2)){
+            return false;
+        }
+        if(!constB.equals(B2)){
+            return false;
+        }
+        return true;
+
+    }
 }
