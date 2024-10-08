@@ -465,5 +465,70 @@ public class CoderHubMedium {
 
     }
 
+
+    public static String longestAlternatingSubstring(String digits) {
+        if(digits.length() == 0){
+            return"";
+        }
+        String longest = "";
+        for (int i = 0; i < digits.length(); i++) {
+            String sub = "";
+            if(Integer.parseInt(String.valueOf(digits.charAt(i))) % 2 != 0){
+                boolean isPrevOdd = true;
+                sub += digits.charAt(i);
+                for (int j = i+1; j < digits.length(); j++) {
+                    if(Integer.parseInt(String.valueOf(digits.charAt(j))) % 2 == 0){
+                        if(isPrevOdd){
+                            sub += digits.charAt(j);
+                            isPrevOdd = false;
+                        } else{
+                            if(longest.length() < sub.length()){
+                                longest = sub;
+                            }
+                            break;
+                        }
+                    } else {
+                        if(!isPrevOdd){
+                            sub += digits.charAt(j);
+                            isPrevOdd = true;
+                        } else{
+                            if(longest.length() < sub.length()){
+                                longest = sub;
+                            }
+                            break;
+                        }
+                    }
+                }
+            } else {
+                boolean isPrevEven = true;
+                sub += digits.charAt(i);
+                for (int j = i+1; j < digits.length(); j++) {
+                    if(Integer.parseInt(String.valueOf(digits.charAt(j))) % 2 != 0){
+                        if(isPrevEven){
+                            sub += digits.charAt(j);
+                            isPrevEven = false;
+                        } else{
+                            if(longest.length() < sub.length()){
+                                longest = sub;
+                            }
+                            break;
+                        }
+                    } else {
+                        if(!isPrevEven){
+                            sub += digits.charAt(j);
+                            isPrevEven = true;
+                        } else{
+                            if(longest.length() < sub.length()){
+                                longest = sub;
+                            }
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+            return longest;
+    }
+
 }
 

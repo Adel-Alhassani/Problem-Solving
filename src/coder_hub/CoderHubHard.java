@@ -469,6 +469,5 @@ public class CoderHubHard {
             return false;
         }
         return true;
-
     }
 }

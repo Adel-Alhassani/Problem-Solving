@@ -4,16 +4,12 @@ import coder_hub.CoderHubMedium;
 
 public class Main {
     public static void main(String[] args) {
-//        System.out.println("afrg".substring(1,4));
-        System.out.println("suppose to be false: "+CoderHubHard.isInterleave("qwer","tyui","qwetyrui"));
-
-                testPrint();
-
+//                testPrint();
+        System.out.println(CoderHubMedium.longestAlternatingSubstring("1263654081858902"));
     }
 
     static void  testPrint (){
-        System.out.println(CoderHubHard.isInterleave("abcd","efgh","aebcfhdg"));
-        System.out.println("1suppose to be true: "+CoderHubHard.isInterleave("abcd","efgh","aebfcgdh"));
+        System.out.println("suppose to be true: "+CoderHubHard.isInterleave("abcd","efgh","aebfcgdh"));
         System.out.println("suppose to be true: "+CoderHubHard.isInterleave("wxyz","mnop","wmxynzop"));
         System.out.println("suppose to be true: "+CoderHubHard.isInterleave("1234","5678","15263748"));
         System.out.println("suppose to be true: "+CoderHubHard.isInterleave("qazx","swed","qsawzxed"));
@@ -27,7 +23,7 @@ public class Main {
         System.out.println("suppose to be true: "+CoderHubHard.isInterleave("xzaq","plwe","xpzlwaqe"));
         System.out.println("suppose to be true: "+CoderHubHard.isInterleave("bnmk","yutg","bynutmgk"));
 
-        System.out.println("suppose to be false: "+CoderHubHard.isInterleave("qwer","tyui","qwetyrui"));
+        System.out.println("suppose to be true: "+CoderHubHard.isInterleave("qwer","tyui","qwetyrui"));
         System.out.println("suppose to be false: "+CoderHubHard.isInterleave("abcd","efgh","aebcfhdg"));
 
         System.out.println("suppose to be false: "+CoderHubHard.isInterleave("r","fa","raf"));
