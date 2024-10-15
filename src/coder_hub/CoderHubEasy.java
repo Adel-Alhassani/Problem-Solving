@@ -211,4 +211,18 @@ public class CoderHubEasy {
         return num/100.0;
     }
 
+    public static int[] gravity_flip(int[] columns) {
+        for (int i = 0; i < columns.length-1; i++) {
+            for (int j = i+1; j < columns.length; j++) {
+                if(columns[i] > columns[j]){
+                    int temp = columns[i];
+                    columns[i] = columns[j];
+                    columns[j] = temp;
+                }
+            }
+        }
+        return columns;
+    }
+
+
 }

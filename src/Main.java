@@ -5,9 +5,13 @@ import coder_hub.CoderHubMedium;
 public class Main {
     public static void main(String[] args) {
 //                testPrint();
-        String [] arr = new String[] { "A", "B"};
+        int [] arr = new int[] {4, 5, 6, 3, 2};
 
-        System.out.println(CoderHubMedium.str_len_comparison(arr));
+        int [] res = CoderHubEasy.gravity_flip(arr);
+        for (int n :
+                res) {
+            System.out.println(n);
+        }
     }
 
     static void  testPrint (){
