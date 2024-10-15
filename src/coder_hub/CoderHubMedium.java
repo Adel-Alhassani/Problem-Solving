@@ -542,10 +542,7 @@ public class CoderHubMedium {
         }
         return true;
     }
-
-
-
-};
+}
 
 
 

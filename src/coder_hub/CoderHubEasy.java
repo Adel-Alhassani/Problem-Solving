@@ -254,17 +254,42 @@ public class CoderHubEasy {
         return "yes";
     }
 
+    public static int[] get_duplicate_elements(int[] arr) {
+        int c = 0;
+        for (int i = 0; i < arr.length-1; i++) {
+            for (int j = i+1; j < arr.length; j++) {
+                if(arr[i] == arr[j]){
+                    c++;
+                    break;
+                }
+            }
+        }
+        int [] repeated = new int [c];
+        c=0;
+        for (int i = 0; i < arr.length-1; i++) {
+            for (int j = i+1; j < arr.length; j++) {
+                if(arr[i] == arr[j]){
+                    repeated[c] = arr[i];
+                    c++;
+                    break;
+                }
+            }
+        }
+        return repeated;
+    }
+
+
 //    public static String string_builder(String expression) {
 //        int num;
-//        String reg = "12345689]";
+//        String reg = "12345689";
 //        String s = "";
 //        for (int i = 0; i < expression.length(); i++) {
 //            if(String.valueOf(expression.charAt(i)).equals("[")){
 //                num = Integer.parseInt(String.valueOf(expression.charAt(i-1)));
 //                for (int j = i; j < expression.length(); j++) {
-//                    if(reg.contains(String.valueOf(expression.charAt(j)))){
+//                    if(String.valueOf(expression.charAt(j)).equals("]")){
 //                        s += expression.substring(i+1,j).repeat(num);
-//                        i= j;
+////                        s += string_builder(expression.substring(j));
 //                        break;
 //                    }
 //                }

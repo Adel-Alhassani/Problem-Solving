@@ -4,8 +4,12 @@ import coder_hub.CoderHubMedium;
 
 public class Main {
     public static void main(String[] args) {
-//                testPrint();
-        System.out.println(CoderHubEasy.string_builder("3[a2[c]]"));
+        int [] arr = {6, 3, 12, 12};
+        int [] res = CoderHubEasy.get_duplicate_elements(arr);
+        for (int num :
+                res) {
+            System.out.println(num);
+        }
     }
 
     static void  testPrint (){
