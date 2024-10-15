@@ -225,4 +225,53 @@ public class CoderHubEasy {
     }
 
 
+    public static int repetitions(String s) {
+        int longest = 0;
+        int track =0;
+        s = s.toLowerCase();
+        for (int i = 0; i < s.length()-1; i++) {
+            if(String.valueOf(s.charAt(i)).equals(String.valueOf(s.charAt(i+1)))){
+                track++;
+            } else {
+            if(longest < track) {
+                longest = track;
+              track=0;
+                 }
+            }
+        }
+        track++;
+        return Math.max(longest, track);
+    }
+
+    public static String canForm(String source, String target) {
+        source = source.toLowerCase();
+        target = target.toLowerCase();
+        for (int i = 0; i < target.length(); i++) {
+            if(!source.contains(String.valueOf(target.charAt(i)))){
+                return "no";
+            }
+        }
+        return "yes";
+    }
+
+//    public static String string_builder(String expression) {
+//        int num;
+//        String reg = "12345689]";
+//        String s = "";
+//        for (int i = 0; i < expression.length(); i++) {
+//            if(String.valueOf(expression.charAt(i)).equals("[")){
+//                num = Integer.parseInt(String.valueOf(expression.charAt(i-1)));
+//                for (int j = i; j < expression.length(); j++) {
+//                    if(reg.contains(String.valueOf(expression.charAt(j)))){
+//                        s += expression.substring(i+1,j).repeat(num);
+//                        i= j;
+//                        break;
+//                    }
+//                }
+//            }
+//        }
+//        return s;
+//    }
+
+
 }

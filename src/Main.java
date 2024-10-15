@@ -5,13 +5,7 @@ import coder_hub.CoderHubMedium;
 public class Main {
     public static void main(String[] args) {
 //                testPrint();
-        int [] arr = new int[] {4, 5, 6, 3, 2};
-
-        int [] res = CoderHubEasy.gravity_flip(arr);
-        for (int n :
-                res) {
-            System.out.println(n);
-        }
+        System.out.println(CoderHubEasy.string_builder("3[a2[c]]"));
     }
 
     static void  testPrint (){
