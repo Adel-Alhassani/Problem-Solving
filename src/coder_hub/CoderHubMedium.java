@@ -405,26 +405,26 @@ public class CoderHubMedium {
     }
 
     public static String[] find_prefix(String[] words, String text) {
-        String s = "";
-        for (int i = 0; i < words.length; i++) {
-            try {
-                if (words[i].substring(0,text.length()).equals(text)){
-                    s += words[i] + " ";
-                }
-            }
-            catch (Exception ignored){
+        int c = 0;
+        for (String word : words) {
+            String part =  word.toLowerCase().substring(0, text.length());
+            if (text.toLowerCase().equals(part)) {
+                c++;
             }
         }
-
-        String [] arr;
-
-        if (s.length() == 0){
-            arr = new String[1];
-            arr[0] = "No matches found";
-            return arr;
+        if(c == 0){
+            return new String [] {"No matches found"};
         }
-        arr = s.split(" ");
-        return arr;
+        String [] wordsFound = new String [c];
+        c=0;
+        for (String word : words) {
+            String part =  word.toLowerCase().substring(0, text.length());
+            if (text.toLowerCase().equals(part)) {
+                wordsFound[c] = word;
+                c++;
+            }
+        }
+        return  wordsFound;
     }
 
     //قم بكتابة دالة function تستقبل متغير من نوع string يتكون من حروف، تقوم الدالة باستبدال الاحرف باحد الرمزين (>) و(<) بحيث
@@ -530,5 +530,12 @@ public class CoderHubMedium {
             return longest;
     }
 
-}
+
+
+
+
+};
+
+
+
 

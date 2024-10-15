@@ -5,7 +5,13 @@ import coder_hub.CoderHubMedium;
 public class Main {
     public static void main(String[] args) {
 //                testPrint();
-        System.out.println(CoderHubMedium.longestAlternatingSubstring("1263654081858902"));
+        String [] arr = new String[] { "Reassemble", "Remainder","Room" , "Receive"};
+
+        String [] res = CoderHubMedium.find_prefix(arr,"re");
+        for (String word:
+             res) {
+            System.out.println(word);
+        }
     }
 
     static void  testPrint (){
