@@ -5,13 +5,9 @@ import coder_hub.CoderHubMedium;
 public class Main {
     public static void main(String[] args) {
 //                testPrint();
-        String [] arr = new String[] { "Reassemble", "Remainder","Room" , "Receive"};
+        String [] arr = new String[] { "A", "B"};
 
-        String [] res = CoderHubMedium.find_prefix(arr,"re");
-        for (String word:
-             res) {
-            System.out.println(word);
-        }
+        System.out.println(CoderHubMedium.str_len_comparison(arr));
     }
 
     static void  testPrint (){

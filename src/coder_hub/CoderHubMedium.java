@@ -530,7 +530,18 @@ public class CoderHubMedium {
             return longest;
     }
 
-
+    public static boolean str_len_comparison(String[] words) {
+        if(words.length <= 1){
+            return false;
+        }
+        int len = words[0].length();
+        for (int i = 1; i < words.length; i++) {
+            if(len != words[i].length()){
+                return false;
+            }
+        }
+        return true;
+    }
 
 
 
