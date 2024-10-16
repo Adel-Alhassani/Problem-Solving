@@ -4,13 +4,14 @@ import coder_hub.CoderHubMedium;
 
 public class Main {
     public static void main(String[] args) {
-        int [] arr1 = {7, 8, 9, 7};
-
-        int [] res = CoderHubEasy.remove_duplicate(arr1);
-        for (int num :
-                res) {
-            System.out.println(num);
-        }
+//        int [] arr1 = {7, 8, 9, 7};
+//
+//        int [] res = CoderHubEasy.countdown(23);
+//        for (int num :
+//                res) {
+//            System.out.println(num);
+//        }
+        System.out.println(CoderHubEasy.operation(24,1));
     }
 
     static void  testPrint (){

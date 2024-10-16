@@ -369,6 +369,74 @@ public class CoderHubEasy {
         return  nums;
     }
 
+    public static double get_mean(int[] arr) {
+        // write your code here
+        double sum = 0;
+        for(int i = 0; i < arr.length;i++){
+            sum += arr[i];
+        }
+        return sum / arr.length;
+    }
+
+    public static int[] countdown(int num) {
+        if(num <= 4){
+            return  new int[]{0};
+        }
+        String s ="";
+        for (int i = 1; i < num; i++) {
+            int res = num - 3*i;
+            if(res <= 0){
+                break;
+            }
+            if(res % 2 == 0){
+                s += res +",";
+            }
+        }
+        String [] a = s.split(",");
+        int [] nums = new int[a.length];
+        for (int i = 0; i < a.length; i++) {
+            nums[nums.length - i-1] = Integer.parseInt(a[i]);
+        }
+        return nums;
+    }
+
+    public static double cone_volume(double radius, double height) {
+        // write your code her
+        return Math.pow(radius,2) * height * 3.14 * (1.0/3.0);
+    }
+
+    public static int calculate_sum(int[] lst) {
+        // write your code here
+        int sum = 0;
+        for (int j : lst) {
+            if (j == 7) {
+                break;
+            }
+            sum += j;
+        }
+        return sum;
+    }
+
+    public static String operation(int num1, int num2) {
+        if(num1/num2 == 24){
+            return "divided";
+        }
+        else if(num1*num2 == 24){
+            return "multiplied";
+        }
+        else if(num1+num2 == 24){
+            return"added";
+        }
+        else if(num1-num2 == 24){
+            return"subtracted";
+        }
+        else{
+            return "None";
+        }
+    }
+
+
+
 
 
 //    public static String string_builder(String expression) {
