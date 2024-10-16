@@ -317,7 +317,57 @@ public class CoderHubEasy {
         return Math.PI*2*radius;
     }
 
+    public static int[] mergeAndOrder(int[] array1, int[] array2) {
+        if(array1.length == 0){
+            return array2;
+        }
+        if(array2.length == 0){
+            return array1;
+        }
+        int [] arr = new int [array1.length + array2.length];
+        int c = 0;
+        for (int i : array1) {
+            arr[c] = i;
+            c++;
+        }
+        for (int i : array2) {
+            arr[c] = i;
+            c++;
+        }
+        for (int i = 0; i < arr.length-1; i++) {
+            for (int j = i+1; j < arr.length; j++) {
+                if(arr[i] > arr[j]){
+                    int temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+        return arr;
+    }
 
+    public static int[] remove_duplicate(int[] arr) {
+        String s = arr[0] +",";
+        for (int num : arr) {
+            boolean isDuplicated = false;
+            for (int i = 0; i < s.length(); i++) {
+                if(s.contains(String.valueOf(num))){
+                    isDuplicated = true;
+                    break;
+                }
+            }
+            if(!isDuplicated){
+                s += num + ",";
+                }
+            }
+        String[] result = s.split(",");
+        int [] nums = new int[result.length];
+
+        for (int i = 0; i < result.length; i++) {
+            nums[i] = Integer.parseInt(result[i]);
+        }
+        return  nums;
+    }
 
 
 
