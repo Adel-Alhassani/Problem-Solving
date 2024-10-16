@@ -164,16 +164,13 @@ public class CoderHubEasy {
     }
 
     public static String hashtag_it(String[] my_array) {
-        String s = "";
-        for (int i = 0; i < my_array.length; i++) {
-            if(i == my_array.length - 1){
-                s += my_array[i]+"#";
-                break;
-            }
-            s += my_array[i]+" #";
+        String s = "#"+my_array[0];
+        for (int i = 1; i < my_array.length; i++) {
+            s += " "+ "#"+my_array[i];
         }
         return s;
     }
+
 
 
     public static int[] removeDuplicate(int[] arr) {
@@ -277,6 +274,51 @@ public class CoderHubEasy {
         }
         return repeated;
     }
+
+    public static int[] getPrimesBetween(int a, int b) {
+        int c=0;
+        for (int i = a; i <= b; i++) {
+            if(i==0 || i==1){
+                continue;
+            }
+            boolean isPrime = true;
+            for (int j = 2; j < i; j++) {
+                if(i%j==0){
+                    isPrime = false;
+                    break;
+                }
+            }
+            if(isPrime){
+                c++;
+            }
+        }
+        int [] primeNums = new int[c];
+        c=0;
+        for (int i = a; i <= b; i++) {
+            if(i==0 || i==1){
+                continue;
+            }
+            boolean isPrime = true;
+            for (int j = 2; j < i; j++) {
+                if(i%j==0){
+                    isPrime = false;
+                    break;
+                }
+            }
+            if(isPrime){
+                primeNums[c] = i;
+                c++;
+            }
+        }
+        return primeNums;
+    }
+
+    public static double calculate_circumference(double radius) {
+        return Math.PI*2*radius;
+    }
+
+
+
 
 
 //    public static String string_builder(String expression) {

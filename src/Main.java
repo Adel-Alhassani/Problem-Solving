@@ -4,12 +4,13 @@ import coder_hub.CoderHubMedium;
 
 public class Main {
     public static void main(String[] args) {
-        int [] arr = {6, 3, 12, 12};
-        int [] res = CoderHubEasy.get_duplicate_elements(arr);
-        for (int num :
-                res) {
-            System.out.println(num);
-        }
+//        int [] arr = {6, 3, 12, 12};
+//        int [] res = CoderHubEasy.getPrimesBetween(53,67);
+//        for (int num :
+//                res) {
+//            System.out.println(num);
+//        }
+        System.out.println(CoderHubEasy.calculate_circumference(5));
     }
 
     static void  testPrint (){
